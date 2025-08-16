@@ -1,0 +1,234 @@
+// メディアクエリ-----------------------------------
+$breakpoints: (
+  //キー　　値
+  "s": "screen and (max-width: 699px)",
+  "m": "(min-width: 700px) and (max-width: 899px)",
+  "l": "(min-width: 900px) and (max-width: 1199px)",
+  "xl": "screen and (min-width: 1200px)"
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// font-family: "Noto Sans JP", sans-serif;
+// font-family: "Montserrat", sans-serif;
+
+// title------------------------------------------------
+.result-title{
+    font-family: "Noto Sans JP", sans-serif;
+font-size: 18px;
+font-weight: 700;
+line-height: calc(18 / 18);
+letter-spacing: 0.1em;
+color: #111111;
+text-align: center;
+@include mq(m) {
+    font-size: 20px;
+}
+@include mq(l) {
+font-size: 20px;
+line-height: calc(20 / 20);
+}
+@include mq(xl) {
+    font-size: 20px;
+    line-height: calc(20 / 20);
+    }
+}
+
+
+.title-en{
+    color: #111111;
+    font-family: "Montserrat", sans-serif;
+font-size: 38px;
+font-weight: 700;
+line-height: calc(38 / 38);
+letter-spacing: 0.1em;
+text-align: center;
+@include mq(l) {
+font-size: 50px;
+line-height: calc(50 / 50);
+}
+@include mq(xl) {
+    font-size: 50px;
+    line-height: calc(50 / 50);
+    }
+&.title-en--news{
+    @include mq(l) {
+        text-align: left;
+    }
+    @include mq(xl) {
+        text-align: left;
+    }
+}
+}
+
+.title{
+    .title-en{
+        margin-bottom: 14px;
+    }
+    .title-ja{
+        font-family: "Montserrat", sans-serif;
+font-size: 14px;
+font-weight: 400;
+line-height: calc(14 / 14);
+letter-spacing: 0.08em;
+text-align: center;
+@include mq(l) {
+font-size: 16px;
+line-height: calc(16 / 16);
+}
+@include mq(xl) {
+    font-size: 16px;
+    line-height: calc(16 / 16);
+    }
+    }
+}
+
+.different-title{
+    font-family: "Noto Sans JP", sans-serif;
+font-size: 20px;
+font-weight: 700;
+line-height: calc(20 / 20);
+text-align: center;
+color: #111111;
+@include mq(l) {
+    font-size: 24px;
+    line-height: calc(24 / 24);
+    }
+@include mq(xl) {
+font-size: 24px;
+line-height: calc(24 / 24);
+}
+}
+
+
+// btn--------------------------------------------------
+.btn{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 28px;
+    padding-right: 28px;
+    border-radius: 60px;
+    font-family: "Noto Sans JP", sans-serif;
+font-size: 16px;
+font-weight: 700;
+line-height: calc(27 / 16);
+letter-spacing: 0.03em;
+transition: color 0.3s, background-color 0.3s;
+&:hover{
+    color: #111 !important;
+    background-color: #FABE00;
+}
+}
+
+.btn.btn--nav{
+    background-color: #fff;
+    border: 2px solid #111111;
+    transition: color 0.3s, background-color 0.3s;
+    &:hover{
+        color: #111 !important;
+        background-color: #FABE00;
+    }
+}
+
+.btn--download{
+    color: #FFFFFF;
+    background-color: #111111;
+    border: 2px solid #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+    &:hover{
+        color: #111111;
+        background-color: #FFFFFF;
+        border: 2px solid #111111;
+    }
+}
+
+.btn.btn--fv{
+    @include mq(l) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    @include mq(xl) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.btn--about{
+    color: #111111;
+    background-color: #fff;
+    border: 2px solid #111111;
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn--modal{
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #fff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 48.5px;
+    padding-right: 48.5px;
+    border: 2px solid #111111;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn--cta{
+    color: #111111;
+    border: 2px solid #111111;
+    background-color: #fff;
+    transition: color 0.3s, background-color 0.3s;
+    &:hover{
+        color: #111 !important;
+        background-color: #FABE00;
+    }
+}
+
+.btn--contact{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border: 2px solid #111111;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+    &.disabled{
+        color: #858585;
+        background-color: #EDEDED;
+        border: 2px solid #818181;
+    }
+}
+// only---------------------------------------------
+.only-s-m{
+    @include mq(l) {
+display: none;
+    }
+    @include mq(xl) {
+   display: none;
+    }
+}
+
+// no-scroll--------------------------------------------
+.no-scroll{
+    overflow: hidden;
+}
